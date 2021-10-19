@@ -1,0 +1,18 @@
+{
+  "name": "botn1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "build": "rimraf bin && tsc",
+    "start": "node bin/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  }
+}
