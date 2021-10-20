@@ -1,11 +1,10 @@
 import TelegramBot from 'node-telegram-bot-api'
-import express from 'express'
 
-class Bot {
+export class Bot {
     private bot;
 
-    initialize() {
+    constructor() {
         this.bot = new TelegramBot(process.env.TOKEN as string);
-        this.bot.setWebHook()
+        this.bot.setWebHook('https://experiment1416-bot.herokuapp.com/' + process.env.TOKEN);
     }
 }
