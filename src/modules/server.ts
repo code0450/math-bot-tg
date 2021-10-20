@@ -7,7 +7,7 @@ export class Server {
 
     constructor() {
         this.server = express();
-        this.path = `/webhook/${process.env.TOKEN}`;
+        this.path = `/bot${process.env.TOKEN}`;
         this.telegram_api = `https://api.telegram.org/bot${process.env.TOKEN}`;
     }
 
