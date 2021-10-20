@@ -1,6 +1,6 @@
 import express from 'express'
 
-class Server {
+export class Server {
     private server;
     private path: string;
     private telegram_api: string;
@@ -31,7 +31,7 @@ class Server {
                 })
             }) 
         })
-        
+
 
         this.server.listen(8443, async() => {
             console.log('is running on port ', 8443);
