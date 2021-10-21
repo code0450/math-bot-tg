@@ -6,12 +6,13 @@ export class Server {
     private telegram_api: string;
 
     constructor() {
-        this.server = express();
-        this.path = `/bot${process.env.TOKEN}`;
+        this.path = process.env.TOKEN as string;
         this.telegram_api = `https://api.telegram.org/bot${process.env.TOKEN}`;
     }
 
     start() {
+        this.server = express();
+
         this.server.use(express.json());
 
 
