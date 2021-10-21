@@ -16,8 +16,7 @@ export class Server {
 
         this.server.post(this.path, (req, res) => {
             console.log(req.body);
-            res.sendStatus(200);
-            res.end();
+            res.sendStatus(200).end();
         })
 
 
