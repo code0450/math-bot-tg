@@ -14,7 +14,7 @@ export class Server {
         this.server.use(express.json());
 
 
-        this.server.post(`/}`, async (req, res) => {
+        this.server.post(this.path, async (req, res) => {
             const chatId = req.body.message.chat.id;
             const text = req.body.message.text;
 
@@ -32,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(8443, async() => {
-            console.log('is running on port ', 8443);
+        this.server.listen(process.env.PORT || 8443, async() => {
+            console.log('is running on port ', process.env.PORT || 8443);
         })
     }
 }
