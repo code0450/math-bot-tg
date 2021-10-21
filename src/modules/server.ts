@@ -5,7 +5,7 @@ export class Server {
     private path: string;
 
     constructor() {
-        this.path = `https://api.telegram.org/bot${process.env.TOKEN}`;
+        this.path = `/${process.env.TOKEN}`
     }
 
     start() {
@@ -14,11 +14,11 @@ export class Server {
         this.server.use(express.json());
 
 
-        this.server.post(`/${process.env.TOKEN}`, async (req, res) => {
+        this.server.post(`/}`, async (req, res) => {
             const chatId = req.body.message.chat.id;
             const text = req.body.message.text;
 
-            await fetch(`${this.path}/sendMessage`, {
+            await fetch(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -32,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(88, async() => {
-            console.log('is running on port ', 88);
+        this.server.listen(8443, async() => {
+            console.log('is running on port ', 8443);
         })
     }
 }
