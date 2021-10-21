@@ -13,7 +13,7 @@ export class Bot {
     }
 
     activate() {
-        this.bot = new TelegramBot(process.env.TOKEN as string, this.options);
+        this.bot = new TelegramBot(process.env.TOKEN as string);
         this.bot.setWebHook('https://experiment1416-bot.herokuapp.com/' + process.env.TOKEN);
     }
 }

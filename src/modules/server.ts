@@ -32,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(80, async() => {
-            console.log('is running on port', 80);
+        this.server.listen(3548, async() => {
+            console.log('is running on port', 3548);
         })
     }
 }
