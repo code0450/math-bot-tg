@@ -14,22 +14,10 @@ export class Server {
         this.server.use(express.json());
 
 
-        this.server.post(this.path, async (req, res) => {
-            console.log('success');
-            const chatId = req.body.message.chat.id;
-            const text = req.body.message.text;
-
-            // await fetch(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage`, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         chat_id: chatId,
-            //         text: text
-            //     })
-            // }) 
+        this.server.post(this.path, (req, res) => {
+            console.log(req.body);
+            res.sendStatus(200);
+            res.end();
         })
 
 
