@@ -19,17 +19,17 @@ export class Server {
             const chatId = req.body.message.chat.id;
             const text = req.body.message.text;
 
-            await fetch(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: text
-                })
-            }) 
+            // await fetch(`https://api.telegram.org/bot${process.env.TOKEN}/sendMessage`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         chat_id: chatId,
+            //         text: text
+            //     })
+            // }) 
         })
 
 
