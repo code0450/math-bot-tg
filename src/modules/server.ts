@@ -20,7 +20,7 @@ export class Server {
         })
 
 
-        this.server.listen(process.env.PORT, async() => {
+        this.server.listen(process.env.PORT, () => {
             console.log('is running on port', process.env.PORT);
         })
     }
