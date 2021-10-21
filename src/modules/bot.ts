@@ -7,7 +7,7 @@ export class Bot {
     constructor() {
         this.options = {
             webHook: {
-                port: 4684
+                port: 80
             }
         };
     }
