@@ -3,11 +3,9 @@ import express from 'express'
 export class Server {
     private server;
     private path: string;
-    private telegram_api: string;
 
     constructor() {
-        this.path = process.env.TOKEN as string;
-        this.telegram_api = `https://api.telegram.org/bot${process.env.TOKEN}`;
+        this.path = `https://api.telegram.org/bot${process.env.TOKEN}`;
     }
 
     start() {
@@ -16,11 +14,11 @@ export class Server {
         this.server.use(express.json());
 
 
-        this.server.post(this.path, async (req, res) => {
+        this.server.post(`/${process.env.TOKEN}`, async (req, res) => {
             const chatId = req.body.message.chat.id;
             const text = req.body.message.text;
 
-            await fetch(`${this.telegram_api}/sendMessage`, {
+            await fetch(`${this.path}/sendMessage`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -34,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(8443, async() => {
-            console.log('is running on port ', 8443);
+        this.server.listen(443, async() => {
+            console.log('is running on port ', 443);
         })
     }
 }
