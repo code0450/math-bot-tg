@@ -32,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(process.env.PORT || 8443, async() => {
-            console.log('is running on port ', process.env.PORT || 8443);
+        this.server.listen(8443, async() => {
+            console.log('is running on port ', 8443);
         })
     }
 }
