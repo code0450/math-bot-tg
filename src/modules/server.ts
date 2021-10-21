@@ -5,7 +5,7 @@ export class Server {
     private path: string;
 
     constructor() {
-        this.path = `/${process.env.TOKEN}`;
+        this.path = `/bot${process.env.TOKEN}`;
     }
 
     start() {
@@ -32,8 +32,8 @@ export class Server {
         })
 
 
-        this.server.listen(3548, async() => {
-            console.log('is running on port', 3548);
+        this.server.listen(2569, async() => {
+            console.log('is running on port', 2569);
         })
     }
 }
