@@ -15,6 +15,7 @@ export class Server {
 
 
         this.server.post(this.path, async (req, res) => {
+            console.log('success');
             const chatId = req.body.message.chat.id;
             const text = req.body.message.text;
 
