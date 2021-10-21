@@ -7,13 +7,13 @@ export class Bot {
     constructor() {
         this.options = {
             webHook: {
-                port: 80
+                port: 3548
             }
         };
     }
 
     activate() {
-        this.bot = new TelegramBot(process.env.TOKEN as string);
+        this.bot = new TelegramBot(process.env.TOKEN as string, this.options);
         this.bot.setWebHook('https://experiment1416-bot.herokuapp.com/' + process.env.TOKEN);
     }
 }
