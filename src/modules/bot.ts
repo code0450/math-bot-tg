@@ -14,6 +14,6 @@ export class Bot {
 
     activate() {
         this.bot = new TelegramBot(process.env.TOKEN as string, this.options);
-        this.bot.setWebHook(`${process.env.APP_URL}/bot${process.env.TOKEN}`);
+        this.bot.setWebHook(`https://botn12.herokuapp.com:443/bot${process.env.TOKEN}`);
     }
 }
