@@ -1,12 +1,8 @@
 import express from 'express'
+import { Bot } from './bot'
 
 export class Server {
     private server;
-    private path: string;
-
-    constructor() {
-        this.path = `/bot${process.env.TOKEN}`;
-    }
 
     start() {
         this.server = express();
@@ -14,9 +10,9 @@ export class Server {
         this.server.use(express.json());
 
 
-        this.server.post(this.path, (req, res) => {
-            console.log(req.body);
-            res.sendStatus(200).end();
+        this.server.post(`/bot${process.env.TOKEN}`, (req, res) => {
+            Bot.getInstance().processUpdate(req.body);
+            res.sendStatus(200);
         })
 
 
