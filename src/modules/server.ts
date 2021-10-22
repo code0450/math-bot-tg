@@ -3,6 +3,12 @@ import { Bot } from './bot'
 
 export class Server {
     private server;
+    private bot;
+
+
+    constructor() {
+        this.bot = Bot.getInstance().getBot()
+    }
 
     start() {
         this.server = express();
@@ -11,7 +17,7 @@ export class Server {
 
 
         this.server.post(`/bot${process.env.TOKEN}`, (req, res) => {
-            Bot.getInstance().processUpdate(req.body);
+            this.bot.processUpdate(req.body)
             res.sendStatus(200);
         })
 

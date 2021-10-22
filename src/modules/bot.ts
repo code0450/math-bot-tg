@@ -17,7 +17,7 @@ export class Bot {
         this.bot.setWebHook(`https://talking-bot-0.herokuapp.com:443/bot${process.env.TOKEN}`);
     }
 
-    processUpdate(body) {
-        this.bot.processUpdate(body);
+    getBot() {
+        return this.bot
     }
 }
