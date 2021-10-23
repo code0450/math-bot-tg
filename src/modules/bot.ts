@@ -19,7 +19,7 @@ export class Bot {
         this.bot.setWebHook(`https://math-bot-tg.herokuapp.com:443/bot${process.env.TOKEN}`);
         
         new Start().init();
-        new Commands().init();
+        //new Commands().init();
     }
 
     getBot() {
