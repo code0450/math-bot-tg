@@ -8,8 +8,8 @@ export class Start {
     }
 
     init() {
-        this.bot.on('message', msg => {
-            this.bot.sendMessage(msg.chat.id, 'super puper sssppp');
+        this.bot.onText(/\/start/, msg => {
+            this.bot.sendMessage(msg.chat.id, 'Hello, I will help you to improve your arithmetic skills. To see all commands use /commands');
         })
     }
 }
