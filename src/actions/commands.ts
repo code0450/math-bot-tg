@@ -1,6 +1,6 @@
 import { Bot } from '../modules/bot';
 
-export class Start {
+export class Commands {
     private bot;
 
     constructor() {
