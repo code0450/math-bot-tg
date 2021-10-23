@@ -1,5 +1,5 @@
 import TelegramBot from 'node-telegram-bot-api';
-import { Start } from '../commands/start';
+import { Start } from '../actions/start';
 
 export class Bot {
     private bot;
