@@ -1,6 +1,7 @@
-import TelegramBot from 'node-telegram-bot-api';
-import { Start } from '../actions/start';
-import { Commands } from '../actions/commands'
+import TelegramBot from 'node-telegram-bot-api'
+import { StartAct } from '../actions/start-act'
+import { GameAct } from '../actions/game-act'
+import { HelpAct } from '../actions/help-act'
 
 export class Bot {
     private bot;
@@ -18,8 +19,9 @@ export class Bot {
         this.bot = new TelegramBot(process.env.TOKEN as string);
         this.bot.setWebHook(`https://math-bot-tg.herokuapp.com:443/bot${process.env.TOKEN}`);
         
-        new Start().init();
-        //new Commands().init();
+        new StartAct().init();
+        new GameAct().init();
+        new HelpAct().init();
     }
 
     getBot() {
