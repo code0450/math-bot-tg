@@ -10,7 +10,7 @@ export class Start {
     init() {
         this.bot.onText(/\/start/, msg => {
             this.bot.sendMessage(msg.chat.id, 'Hello, I will help you to improve your arithmetic skills.');
-            this.bot.sendMessage(msg.chat.id, 'To see all commands use: /commands !')
+            this.bot.sendMessage(msg.chat.id, 'To see all commands use:  /commands ')
         })
     }
 }
