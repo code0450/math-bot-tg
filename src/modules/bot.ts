@@ -7,6 +7,8 @@ export class Bot {
     private bot;
     private static instance: Bot
 
+    private constructor() { }
+
     static getInstance(): Bot {
         if(!Bot.instance) {
             Bot.instance = new Bot();
