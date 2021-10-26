@@ -9,7 +9,7 @@ export class GameAct {
 
     init() {
         this.bot.onText(/\/game/, async msg => {
-            await this.bot.sendGame(msg.chat.id, 'MathBot', true)
+            await this.bot.sendGame(msg.chat.id, 'MathBot')
         })
     }
 }
