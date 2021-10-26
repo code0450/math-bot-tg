@@ -1,29 +1,51 @@
-import { One } from './levels/one'
+// export class MathGame {
+//     private static instance: MathGame
 
-export class MathGame {
-    
 
-    generateMathProblem(level) {
+//     private constructor() { }
 
-        switch(level.number) {
-            case 1:
-                return One.getInstance().generate();
-            case 2:
-                return ;
-            case 3:
-                return ;
-            case 4:
-                return ;
-            case 5:
-                return ;
-            case 6:
-                return ;
-            case 7:
-                return ;
-            case 8:
-                return ;
-            case 9:
-                return ;
-        }
-    }
-}
+//     public static getInstance() {
+//         if(!MathGame.instance) {
+//             MathGame.instance = new MathGame();
+//         }
+
+//         return MathGame.instance;
+//     }
+
+
+//     generateMathProblem(levelArr) {
+
+//         switch(this.getRandomNumber(1, 5)) {
+//             case 1:
+//                 return this.generateMultiplication(levelArr)
+//             case 2:
+//                 return this.generateDivision(levelArr);
+//             case 3:
+//                 return this.generateAddition(levelArr);
+//             case 4:
+//                 return this.generateSubtraction(levelArr);
+//             case 5:
+//                 return this.generateMultiplication(levelArr);
+//         }
+//     }
+
+//     private getRandomNumber(min, max) {
+//         return Math.floor(min + Math.random() * (max + 1 - min))
+//     }
+
+//     private generateMultiplication(level) {
+
+//     }
+
+//     private generateDivision() {
+
+//     }
+
+//     private generateAddition() {
+
+//     }
+
+//     private generateSubtraction() {
+
+//     }
+// }

@@ -1,5 +1,4 @@
 import { Bot } from '../modules/bot';
-import { MathGame } from '../app/math-game';
 
 export class GameAct {
     private bot;
@@ -9,6 +8,8 @@ export class GameAct {
     }
 
     init() {
-        this.bot.onText(/\/game/, msg => {})
+        this.bot.onText(/\/game/, async msg => {
+            await this.bot.sendGame(msg.chat.id, 'MathBot', true)
+        })
     }
 }
