@@ -9,9 +9,9 @@ export class HelpAct {
 
     init() {
         this.bot.onText(/\/help/, async msg => {
-            await this.bot.sendMessage(msg.chat.id, 'Each level consists of 15 audio questions, ' + 
-                'your objective is to solve all of them in 90 seconds. ' +
-                'Start from the level 1 and move on as you beat the time.')
+            await this.bot.sendMessage(msg.chat.id, 'Each level consists of audio questions, ' + 
+                'your objective is to solve at least 10 of them. ' +
+                'Start from the level 1 and move on as you develop the skill.')
         })
     }
 }
