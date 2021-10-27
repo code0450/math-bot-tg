@@ -1,4 +1,7 @@
-// export class TextSpeech {
+
+import fs from 'fs'
+
+export class TextSpeech {
 
     
-// }
+}

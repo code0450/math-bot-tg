@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "google-translate-tts": "^0.4.0-dev",
     "node-telegram-bot-api": "^0.54.0"
   },
   "engines": {
