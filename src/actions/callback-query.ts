@@ -11,6 +11,7 @@ export class CallbackQuery {
     init() {
         this.bot.on('callback_query', async query => {
             let audio = await Speech.getInstance().generate('this is an amazing test');
+            console.log(query.message)
             //await this.bot.sendAudio(query.message.id, audio)
         });
     }
