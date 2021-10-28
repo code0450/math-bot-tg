@@ -11,7 +11,13 @@ export class CallbackQuery {
     init() {
         this.bot.on('callback_query', async query => {
             let audio = await MathGame.getInstance().generateAudio(query.data);
-            await this.bot.sendVoice(query.message.chat.id, audio);
+            await this.bot.sendVoice(query.message.chat.id, audio, {
+                reply_markup: JSON.stringify({
+                    inline_keyboard: [
+                        [{text: 'Next question', callback_data: query.data}],
+                    ]
+                })
+            });
         });
     }
 }
