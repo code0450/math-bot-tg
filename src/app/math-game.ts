@@ -1,14 +1,12 @@
 import { Speech } from "./modules/text-speech";
-import { Level } from "./level";
+import { levelMap } from "./level";
 
 export class MathGame {
     private static instance: MathGame
     private levelObj;
 
 
-    private constructor() {
-        this.levelObj = Level.getInstance().getObj();
-    }
+    private constructor() { }
 
     public static getInstance() {
         if(!MathGame.instance) {
@@ -45,30 +43,30 @@ export class MathGame {
     }
 
     private generateMultiplication(level) {
-        const number1 = this.getRandomNumber(this.levelObj[level][0], this.levelObj[level][1]);
-        const number2 = this.getRandomNumber(this.levelObj[level][2], this.levelObj[level][3]);
+        const number1 = this.getRandomNumber(levelMap[level][0], levelMap[level][1]);
+        const number2 = this.getRandomNumber(levelMap[level][2], levelMap[level][3]);
 
         return `${number1} times ${number2}`
     }
 
     private generateDivision(level) {
-        const number1 = this.getRandomNumber(this.levelObj[level][4], this.levelObj[level][5]);
-        const number2 = this.getRandomNumber(this.levelObj[level][6], this.levelObj[level][7]);
+        const number1 = this.getRandomNumber(levelMap[level][4], levelMap[level][5]);
+        const number2 = this.getRandomNumber(levelMap[level][6], levelMap[level][7]);
 
         if(number1 % number2 == 0) return `${number1} divide ${number2}`
         else return this.generateDivision(level);
     }
 
     private generateAddition(level) {
-        const number1 = this.getRandomNumber(this.levelObj[level][8], this.levelObj[level][9]);
-        const number2 = this.getRandomNumber(this.levelObj[level][10], this.levelObj[level][11]);
+        const number1 = this.getRandomNumber(levelMap[level][8], levelMap[level][9]);
+        const number2 = this.getRandomNumber(levelMap[level][10], levelMap[level][11]);
 
         return `${number1} plus ${number2}`
     }
 
     private generateSubtraction(level) {
-        const number1 = this.getRandomNumber(this.levelObj[level][12], this.levelObj[level][13]);
-        const number2 = this.getRandomNumber(this.levelObj[level][14], this.levelObj[level][15]);
+        const number1 = this.getRandomNumber(levelMap[level][12], levelMap[level][13]);
+        const number2 = this.getRandomNumber(levelMap[level][14], levelMap[level][15]);
 
         if(number1 >= number2) return `${number1} minus ${number2}`
         else return this.generateDivision(level);
