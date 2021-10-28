@@ -1,5 +1,5 @@
 import { Bot } from '../modules/bot';
-import { Speech } from '../app/modules/text-speech';
+import { MathGame } from '../app/math-game';
 
 export class CallbackQuery {
     private bot;
@@ -10,7 +10,7 @@ export class CallbackQuery {
 
     init() {
         this.bot.on('callback_query', async query => {
-            let audio = await Speech.getInstance().generate('this is an amazing test');
+            let audio = await MathGame.getInstance().generateAudio(query.data);
             await this.bot.sendVoice(query.message.chat.id, audio);
         });
     }
