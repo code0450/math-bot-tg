@@ -30,8 +30,15 @@ export class Speech {
             voice: 'en-US_AllisonV3Voice',
         };
 
-        const response = await this.textToSpeech.synthesize(synthesizeParams);
+        try {
+
+            const response = await this.textToSpeech.synthesize(synthesizeParams); 
+            return response.result
+
+        } catch (error: any) {
+
+            console.log(error.message)
         
-        return response.result;
+        }
     }    
 }
