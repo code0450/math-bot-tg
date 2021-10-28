@@ -30,4 +30,8 @@ export class Level {
 
         return Level.instance;
     }
+
+    getObj() {
+        return this;
+    }
 }
