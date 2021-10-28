@@ -9,7 +9,7 @@ export class StartAct {
 
     init() {
         this.bot.onText(/\/start/,async msg => {
-            await this.bot.sendMessage(msg.chat.id, 'Hello, I will help you to improve your arithmetic skills.');
+            await this.bot.sendMessage(msg.chat.id, 'I will help you to improve your arithmetic skills.');
         })
     }
 }
