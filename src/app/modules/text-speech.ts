@@ -27,7 +27,7 @@ export class Speech {
         const synthesizeParams = {
             text: text,
             accept: 'audio/ogg;codecs=opus',
-            voice: 'en-US_AllisonV3Voice',
+            voice: 'en-US_KevinV3Voice',
         };
 
         try {
