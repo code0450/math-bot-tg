@@ -1,4 +1,3 @@
-import * as path from 'path';
 import express from 'express'
 import { Bot } from './bot'
 
@@ -17,10 +16,6 @@ export class Server {
         this.server.use(express.json());
         this.server.set('view engine', 'ejs')
 
-        
-        this.server.get('/bot', (req, res) => {
-            res.sendFile(path.join(__dirname, '../../', 'public/' , 'math-game.html'));
-        })
 
         this.server.post(`/bot${process.env.TOKEN}`, (req, res) => {
             this.bot.processUpdate(req.body)
