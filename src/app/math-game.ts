@@ -21,7 +21,7 @@ export class MathGame {
 
     generateAudio(level, chat_id) {
         const mathProblem = this.generateMathProblem(level);
-        this.collection.updateOne({"chat_id": chat_id}, {"answer": mathProblem.answer}, {upsert: true});
+        this.collection.updateOne({"chat_id": chat_id}, {$set: {"answer": mathProblem.answer}}, {upsert: true});
 
         return Speech.getInstance().generate(mathProblem.text)
     }
