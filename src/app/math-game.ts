@@ -18,7 +18,8 @@ export class MathGame {
 
     generateAudio(level) {
         const mathProblem = this.generateMathProblem(level);
-        return Speech.getInstance().generate(mathProblem)
+
+        return Speech.getInstance().generate(mathProblem.text)
     }
 
 
@@ -46,14 +47,20 @@ export class MathGame {
         const number1 = this.getRandomNumber(levelMap[level][0], levelMap[level][1]);
         const number2 = this.getRandomNumber(levelMap[level][2], levelMap[level][3]);
 
-        return `${number1} times ${number2}`
+        return {
+            text: `${number1} times ${number2}`,
+            answer: number1 * number2
+        }
     }
 
     private generateDivision(level) {
         const number1 = this.getRandomNumber(levelMap[level][4], levelMap[level][5]);
         const number2 = this.getRandomNumber(levelMap[level][6], levelMap[level][7]);
 
-        if(number1 % number2 == 0) return `${number1} divide ${number2}`
+        if(number1 % number2 == 0) return  {
+            text: `${number1} divide ${number2}`,
+            answer: number1 / number2
+        }
         else return this.generateDivision(level);
     }
 
@@ -61,14 +68,20 @@ export class MathGame {
         const number1 = this.getRandomNumber(levelMap[level][8], levelMap[level][9]);
         const number2 = this.getRandomNumber(levelMap[level][10], levelMap[level][11]);
 
-        return `${number1} plus ${number2}`
+        return {
+            text: `${number1} plus ${number2}`,
+            answer: number1 + number2
+        }
     }
 
     private generateSubtraction(level) {
         const number1 = this.getRandomNumber(levelMap[level][12], levelMap[level][13]);
         const number2 = this.getRandomNumber(levelMap[level][14], levelMap[level][15]);
 
-        if(number1 >= number2) return `${number1} minus ${number2}`
+        if(number1 >= number2) return {
+            text: `${number1} minus ${number2}`,
+            answer: number1 - number2
+        }
         else return this.generateDivision(level);
     }
 }
