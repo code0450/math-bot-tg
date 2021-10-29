@@ -30,7 +30,7 @@ export class Database {
         } 
     }
 
-    getClient() {
-        return this.client;
+    getCollection() {
+        return this.client.db('mathGame').collection('answers');
     }
 }

@@ -4,14 +4,11 @@ import { Database } from "../modules/db";
 
 export class MathGame {
     private static instance: MathGame
-    private levelObj;
-    private db;
     private collection;
 
 
     private constructor() {
-        this.db = Database.getInstance().getClient();
-        this.collection = this.db.collection('answers');
+        this.collection = Database.getInstance().getCollection();
     }
 
     public static getInstance() {
