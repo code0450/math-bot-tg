@@ -61,7 +61,7 @@ export class MathGame {
             text: `${number1} divide ${number2}`,
             answer: number1 / number2
         }
-        else {console.log('NNOOWW'); return this.generateDivision(level)};
+        else return this.generateDivision(level);
     }
 
     private generateAddition(level) {
