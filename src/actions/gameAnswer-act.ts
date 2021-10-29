@@ -16,7 +16,6 @@ export class GameAnswerAct {
             } else {
                 await this.bot.sendMessage(msg.chat.id, 'Correct.');
             }
-            
         })
     }
 }

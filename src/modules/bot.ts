@@ -3,6 +3,7 @@ import { StartAct } from '../actions/start-act'
 import { GameAct } from '../actions/game-act'
 import { HelpAct } from '../actions/help-act'
 import { CallbackQuery } from '../actions/callback-query'
+import { GameAnswerAct } from '../actions/gameAnswer-act'
 
 export class Bot {
     private bot;
@@ -25,6 +26,7 @@ export class Bot {
         new StartAct().init();
         new GameAct().init();
         new HelpAct().init();
+        new GameAnswerAct().init();
         new CallbackQuery().init();
     }
 
