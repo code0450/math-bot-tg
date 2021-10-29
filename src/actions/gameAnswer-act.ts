@@ -10,11 +10,12 @@ export class GameAnswerAct {
 
     init() {
         this.bot.onText(/\d+/, async msg => {
-            const answer = MathGame.getInstance().receiveAnswer(msg.chat.id);
+            const answer = await MathGame.getInstance().receiveAnswer(msg.chat.id);
+            console.log(answer);
             if(msg.text == answer) {
-                await this.bot.sendMessage(msg.chat.id, 'Incorrect, try again');
-            } else {
                 await this.bot.sendMessage(msg.chat.id, 'Correct');
+            } else {
+                await this.bot.sendMessage(msg.chat.id, 'Incorrect, try again');
             }
         })
     }

@@ -5,9 +5,12 @@ import { Database } from "../modules/db";
 export class MathGame {
     private static instance: MathGame
     private levelObj;
+    private collection;
 
 
-    private constructor() { }
+    private constructor() {
+        this.collection = Database.getInstance().getClient().collection("answers")
+    }
 
     public static getInstance() {
         if(!MathGame.instance) {
@@ -17,14 +20,20 @@ export class MathGame {
         return MathGame.instance;
     }
 
-    generateAudio(level) {
+    generateAudio(level, chat_id) {
         const mathProblem = this.generateMathProblem(level);
+        this.collection.update(chat_id, {
+            chat_id: mathProblem.answer
+        }, {
+            upsert: true
+        });
+
         return Speech.getInstance().generate(mathProblem.text)
     }
 
-    receiveAnswer(chat_id) {
-        
-        return 
+    async receiveAnswer(chat_id) {
+        const answer = await this.collection.findOne(chat_id)
+        return answer
     }
 
     private generateMathProblem(level) {
