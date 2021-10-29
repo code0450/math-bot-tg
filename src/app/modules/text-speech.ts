@@ -6,7 +6,7 @@ export class Speech {
     private textToSpeech;
     private static instance: Speech
 
-    constructor() {
+    private constructor() {
         this.textToSpeech = new TextToSpeechV1({
             authenticator: new IamAuthenticator({
                 apikey: process.env.APIKEY as string,
