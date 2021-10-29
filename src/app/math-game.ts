@@ -1,5 +1,6 @@
 import { Speech } from "./modules/text-speech";
 import { levelMap } from "./level";
+import { Database } from "../modules/db";
 
 export class MathGame {
     private static instance: MathGame
@@ -21,7 +22,8 @@ export class MathGame {
         return Speech.getInstance().generate(mathProblem.text)
     }
 
-    receiveAnswer() {
+    receiveAnswer(chat_id) {
+        
         return 
     }
 

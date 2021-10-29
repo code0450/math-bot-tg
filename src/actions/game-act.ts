@@ -18,8 +18,7 @@ export class GameAct {
     }
 
     init() {
-        this.bot.onText(/\/game/, async msg => {
-            console.log(msg);
+        this.bot.onText(/\/game|\/level/, async msg => {
             await this.bot.sendMessage(msg.chat.id, 'Choose your level', this.levelOptions);
         })
     }
