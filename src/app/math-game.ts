@@ -18,7 +18,7 @@ export class MathGame {
 
     generateAudio(level) {
         const mathProblem = this.generateMathProblem(level);
-
+        
         return Speech.getInstance().generate(mathProblem.text)
     }
 
