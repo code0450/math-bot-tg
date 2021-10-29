@@ -18,12 +18,14 @@ export class MathGame {
 
     generateAudio(level) {
         const mathProblem = this.generateMathProblem(level);
-        
         return Speech.getInstance().generate(mathProblem.text)
     }
 
+    receiveAnswer() {
+        return 
+    }
 
-    generateMathProblem(level) {
+    private generateMathProblem(level) {
 
         switch(this.getRandomNumber(1, 5)) {
             case 1:
