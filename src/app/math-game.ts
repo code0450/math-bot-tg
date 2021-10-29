@@ -21,18 +21,14 @@ export class MathGame {
 
     generateAudio(level, chat_id) {
         const mathProblem = this.generateMathProblem(level);
-        this.collection.update(chat_id, {
-            chat_id: mathProblem.answer
-        }, {
-            upsert: true
-        });
+        this.collection.updateOne({"chat_id": chat_id}, {"answer": mathProblem.answer}, {upsert: true});
 
         return Speech.getInstance().generate(mathProblem.text)
     }
 
     async receiveAnswer(chat_id) {
-        const answer = await this.collection.findOne(chat_id)
-        return answer
+        const document = await this.collection.findOne({"chat_id": chat_id})
+        return document.answer;
     }
 
     private generateMathProblem(level) {
